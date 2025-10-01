@@ -1,6 +1,6 @@
 [project]
 name = "topdeskpy"
-version = "0.1.0"
+version = "0.1.1"
 description = "Thin python wrapper for some topdesk API calls"
 readme = "README.md"
 requires-python = ">=3.11"

@@ -52,7 +52,7 @@ class Topdeskclient:
                 "name": "Software og systemer",
             },
             "subcategory": {
-                "name": "Robotter",
+                "name": "Udvikling",
             },
             "operator": {
                 "id": "1ad3793e-b04a-4ad2-9854-8a4650e9b600",
