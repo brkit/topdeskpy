@@ -11,3 +11,8 @@ venv/
 .env
 .todo
 DOTENV_PATH
+.ruff_cache/
+dist/
+.coverage*
+htmlcov/
+coverage.json

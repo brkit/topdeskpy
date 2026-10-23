@@ -1,17 +1,49 @@
 [project]
 name = "topdeskpy"
-version = "0.1.1"
-description = "Thin python wrapper for some topdesk API calls"
+version = "0.2.0"
+description = "A typed Python client for TOPdesk general, incident, knowledge base, and asset APIs"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "requests>=2.32.3",
-    "ruff>=0.6.3",
+    "httpx2>=2.16.0,<3",
 ]
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["uv_build>=0.13.5,<0.14"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+source-include = ["examples.py", ".env.example"]
 
 [tool.ruff]
-line-length = 240
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ty.environment]
+python-version = "3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --tb=short"
+markers = ["live: performs real reads and writes against the configured TOPdesk test instance"]
+
+[tool.coverage.run]
+branch = true
+source = ["topdeskpy"]
+
+[tool.coverage.report]
+show_missing = true
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "pandas>=3.1.0",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "python-dotenv>=1.2.4",
+    "ruff>=0.15",
+    "ty>=0.0.91",
+]
