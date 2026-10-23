@@ -3,7 +3,7 @@ name = "topdeskpy"
 version = "0.2.0"
 description = "A typed Python client for TOPdesk general, incident, knowledge base, and asset APIs"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.15"
 dependencies = [
     "httpx2>=2.16.0,<3",
 ]
@@ -17,13 +17,13 @@ source-include = ["examples.py", ".env.example"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py311"
+target-version = "py315"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.ty.environment]
-python-version = "3.11"
+python-version = "3.15"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

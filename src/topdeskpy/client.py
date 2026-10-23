@@ -48,7 +48,7 @@ class TopdeskClient:
         """Whether the underlying HTTP client has been closed."""
         return self._transport.client.is_closed
 
-    def __enter__(self) -> "TopdeskClient":
+    def __enter__(self) -> TopdeskClient:
         return self
 
     def __exit__(

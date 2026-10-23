@@ -2,7 +2,7 @@
 
 from collections.abc import Iterator, Mapping
 from ssl import SSLContext
-from typing import Any, TypeAlias, cast
+from typing import Any, cast
 from urllib.parse import quote, urlsplit
 
 import httpx2
@@ -11,8 +11,8 @@ from .exceptions import APIError, UnexpectedResponseError
 
 # TOPdesk fields and custom asset schemas vary by installation. Keep response keys
 # intact rather than dropping unknown fields during model validation.
-JsonObject: TypeAlias = dict[str, Any]
-Params: TypeAlias = Mapping[str, str | int | float | bool | None]
+type JsonObject = dict[str, Any]
+type Params = Mapping[str, str | int | float | bool | None]
 
 
 def segment(value: str) -> str:
